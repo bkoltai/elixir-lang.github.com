@@ -329,7 +329,7 @@ The implementation is straightforward: we just dispatch to the `KV.Registry` ser
 
 Note that we have also defined a private function named `lookup/2` to help with the common functionality of looking up a bucket and returning its `pid` if it exists, `{:error, :not_found}` otherwise.
 
-By the way, since we are now returning `{:error, :not_found}`, we should amend the `write_line/2` function in `KV.Server` to print such error as well:
+By the way, since we are now returning `{:error, :not_found}`, we should amend the `write_line/2` function in `KVServer` to print such error as well:
 
 ```elixir
 defp write_line(socket, {:error, :not_found}) do
